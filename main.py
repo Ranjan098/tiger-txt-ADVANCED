@@ -30,7 +30,7 @@ bot = Client("bot",
 
 @bot.on_message(filters.command(["start"]) & filters.user(ADMINS))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"HELLO I AM TXT DOWNLOADER BOT MADE BY TIGER BOSS [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nPress /ZINDA")
+    editable = await m.reply_text(f"HELLO I AM TXT DOWNLOADER BOT MADE BY Pheonix [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nPress /ZINDA")
 
 
 @bot.on_message(filters.command("stop") & filters.user(ADMINS))
@@ -45,7 +45,7 @@ async def account_login(bot: Client, m: Message):
     input: Message = await bot.listen(editable.chat.id)
     if input.document:
         x = await input.download()
-        await bot.send_document(-1002002946631, x)
+        await bot.send_document(-1002017908367, x)
         await input.delete(True)
         file_name, ext = os.path.splitext(os.path.basename(x))
         credit = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
@@ -189,7 +189,7 @@ async def account_login(bot: Client, m: Message):
                         download_cmd = f"{cmd} -R 25 --fragment-retries 25"
                         os.system(download_cmd)
                         copy = await bot.send_document(chat_id=m.chat.id,document=f'{name}.pdf', caption=cc1)
-                        await copy.copy(chat_id = -1002002946631)
+                        await copy.copy(chat_id = -1002017908367)
                         count += 1
                         os.remove(f'{name}.pdf')
                     except FloodWait as e:
